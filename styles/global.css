@@ -6,6 +6,11 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  color: #ffffff;
+}
+
+html {
+  background-color: #080404;
 }
 
 * {
@@ -25,3 +30,4 @@ img {
   max-width: 100%;
   display: block;
 }
+
