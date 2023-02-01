@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Ticket({ children }) {
+export default function Ticket({ children, href = "#", card }) {
   return (
-    <Link href="/about">
-      <div class="card">
+    <Link href={href}>
+      <div className={`card ${card}`}>
         <h2>{children}</h2>
         <i class="fas fa-arrow-right"></i>
         <p>a lonely trip.</p>

@@ -5,13 +5,30 @@ import Script from "next/script";
 import styles from "./layout.module.scss";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import particleJson from "../particles/star";
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 const name = "Yuta Abe";
 export const siteTitle = "Portfolio";
 
 export default function Layout({ children, home }) {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
+  }, []);
   return (
     <div className={styles.container}>
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={particleJson}
+      />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -37,6 +54,9 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
+            <Link href="/">
+              <p className={styles.logo}>Yuta Abe Portfolio</p>
+            </Link>
             <Image
               priority
               src="/images/profile.jpg"
