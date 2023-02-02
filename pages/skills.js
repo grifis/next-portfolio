@@ -20,10 +20,15 @@ export default function Skills() {
   ];
 
   const infra = [
-    { type: "mysql", level: 70 },
-    { type: "docker", level: 100 },
-    { type: "grafql", level: 30 },
-    { type: "git&github", level: 30 },
+    { type: "mysql", level: 60 },
+    { type: "docker", level: 60 },
+    { type: "grafql", level: 20 },
+    { type: "git&github", level: 80 },
+  ];
+
+  const dataScience = [
+    { type: "python", level: 50 },
+    { type: "r", level: 30 },
   ];
 
   const frontColors = {
@@ -31,6 +36,30 @@ export default function Skills() {
     title: {
       text: "#fff",
       background: "#2980b9",
+    },
+  };
+
+  const backColors = {
+    bar: "#66cdaa",
+    title: {
+      text: "#fff",
+      background: "#2e8b57",
+    },
+  };
+
+  const inflaColors = {
+    bar: "#3498db",
+    title: {
+      text: "#fff",
+      background: "#2980b9",
+    },
+  };
+
+  const dataColors = {
+    bar: "#da70d6",
+    title: {
+      text: "#fff",
+      background: "#9400d3",
     },
   };
 
@@ -46,13 +75,13 @@ export default function Skills() {
         <SkillBar skills={frontend} height={20} colors={frontColors} />
 
         <h3 className={utilStyles.headingMg}>Backend</h3>
-        <SkillBar skills={backend} height={20} />
+        <SkillBar skills={backend} height={20} colors={backColors} />
 
         <h3 className={utilStyles.headingMg}>Infrastructure</h3>
-        <SkillBar skills={frontend} height={20} />
+        <SkillBar skills={infra} height={20} />
 
         <h3 className={utilStyles.headingMg}>Data Sciense</h3>
-        <SkillBar skills={frontend} height={20} />
+        <SkillBar skills={dataScience} height={20} colors={dataColors} />
       </section>
     </Layout>
   );
