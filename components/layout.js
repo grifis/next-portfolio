@@ -70,6 +70,9 @@ export default function Layout({ children, home }) {
         ) : (
           <>
             <Link href="/">
+              <p className={styles.logo}>Yuta Abe Portfolio</p>
+            </Link>
+            <Link href="/">
               <Image
                 priority
                 src="/images/profile.jpg"
